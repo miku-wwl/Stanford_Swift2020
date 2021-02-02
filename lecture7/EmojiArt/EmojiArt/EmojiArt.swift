@@ -9,7 +9,7 @@ import Foundation
 
 struct EmojiArt{
     var backgroudURL :URL?
-    private(set) var emojis = [Emoji]()
+    var emojis = [Emoji]()
     
     
     struct  Emoji:Identifiable {
