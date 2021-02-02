@@ -35,4 +35,9 @@ class EmojiMemoryGame: ObservableObject {
         
         model.choose(card: card)
     }
+    
+    
+    func resetGame() -> Void{
+        model = EmojiMemoryGame.createMemoryGame()
+    }
 }

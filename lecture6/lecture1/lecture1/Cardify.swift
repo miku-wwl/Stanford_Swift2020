@@ -7,8 +7,21 @@
 //
 
 import SwiftUI
-struct Cardify: ViewModifier{
-    var isFaceUp: Bool
+struct Cardify: AnimatableModifier	{
+    var rotation: Double
+    var isFaceUp: Bool {
+        rotation < 90
+    }
+    init(isFaceUp: Bool){
+        rotation = isFaceUp ? 0:180
+    }
+    
+    var animatableData: Double{
+        get{return rotation}
+        set{rotation = newValue}
+    }
+    
+    
     func body(content: Content) ->some View{
         ZStack{
             if isFaceUp{
@@ -22,6 +35,8 @@ struct Cardify: ViewModifier{
                
             }
         }
+        .rotation3DEffect(Angle.degrees(rotation), axis: (0,1,0))
+        
     }
     private let cornerRadius: CGFloat = 10.0
     private let edgeLineWidth: CGFloat = 3
