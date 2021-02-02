@@ -24,6 +24,9 @@ struct EmojiArtDocumentView: View {
             .padding(.horizontal)
             Rectangle().foregroundColor(.yellow)
                 .edgesIgnoringSafeArea([.horizontal, .bottom])
+                .onDrop(of: ["public.image"], isTargeted: nil) {providers, location in
+                    
+                }
         }
        
         
