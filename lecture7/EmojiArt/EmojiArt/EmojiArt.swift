@@ -9,13 +9,13 @@ import Foundation
 
 struct EmojiArt{
     var backgroudURL :URL?
-    private(set) var emojis = [Emoji]()
+    var emojis = [Emoji]()
     
     
     struct  Emoji:Identifiable {
         let text:String
-        var x:Int
-        var y:Int
+        var x:Int  //offset from center
+        var y:Int  //offset from center
         var size:Int
         var id:Int
         
